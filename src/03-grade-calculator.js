@@ -35,6 +35,6 @@ export function calculateGrade(score, hasExtraCredit) {
   if(score >= 70 && score <= 79) return "C"
   if(score >= 60 && score <= 69) return "D"
   if(score >= 0 && score <= 59) return "F"
-
+ 
 
 }
