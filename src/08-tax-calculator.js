@@ -27,4 +27,41 @@
  */
 export function calculateTax(income) {
   // Your code here
+  if (income <= 0) return 0
+  
+  if(income > 0 && income <= 10000)  return 0;
+ 
+
+  let tax = 0
+
+  if (income >= 10001 && income <= 30000) {
+    tax = (income - 10000) * 0.10
+    return tax
+  }
+  if (income >= 30001 && income <= 70000) {
+    tax = (income - 30000) * 0.20
+    tax += (30000 - 10000) * 0.10
+    return tax
+  }
+  if (income > 70000) {
+    tax = (income - 70000) * 0.30
+    tax += (70000 - 30000) * 0.20
+    tax += (30000 - 10000) * 0.10
+    return tax
+  }
 }
+/*
+Agar taxable income 1000 hai ... good
+
+agar taxable income 10000 se jyada aur 30000 se kam hai to 
+  tax hai 10 %
+
+  agar 30000 se jyada aur 70000 se kam hai
+   tax hai 20% amount-30000
+
+   taxable income income - nontaxableamount
+   if nontaxableamount > 10000, then uspe 10000 wale slab ka rate lagega
+
+   tax amount
+
+*/
